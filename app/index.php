@@ -1,11 +1,9 @@
 <?php
-// Enter your code here, enjoy!
-$array = array("1" => "PHP code tester Sandbox Online (v4)",
-    "emoji" => "😀 😃 😄 😁 😆", 5 , 5 => 89009,
-    "Random number" => rand(100,999),
-    "PHP Version" => phpversion()
-);
+header('Content-Type: application/json; charset=utf-8');
 
-foreach( $array as $key => $value ){
-    echo $key."\t=>\t".$value."\n";
-}
+echo json_encode([
+    'success' => true,
+    'service' => 'ToolXON Web Tool Manager API',
+    'version' => '1.0',
+    'php_version' => PHP_VERSION
+], JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
